@@ -1,0 +1,20 @@
+
+from betterforms.multiform import MultiModelForm
+from SBSInstructions.form import AnleitungsschrittForm, KomponenteForm
+from django.contrib.auth.views import FormView
+
+# Formular um Anleitungsschritte und Komponenten in einem Schritt zu erfassen
+class SchrittundKomponentenMultiForm(MultiModelForm):
+    form_classes = {
+        'Anleitungsschritt': AnleitungsschrittForm,
+        'Komponente': KomponenteForm,
+    }
+
+# View um Anleitungsschritte und Komponenten in einem Schritt zu erfassen
+class AnleitungsschritterstellenCreateView(FormView):
+
+    form_class = SchrittundKomponentenMultiForm
+
+    template_name = 'Anleitungsschritterstellen.html'
+
+

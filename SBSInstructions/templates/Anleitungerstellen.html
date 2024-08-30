@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!----------------------------------------------------HEAD----------------------------------------------------->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SbS - Anleitung erstellen</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+
+    <!-- Link zu .js und static -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Anleitungerstellen.css' %}">
+    <script src="{% static 'js/Anleitungerstellen.js' %}" defer></script>
+</head>
+
+<!----------------------------------------------------BODY----------------------------------------------------->
+<body>    
+<!-- Divider für Speichern-Popup -->
+<div id="overlaySpeichern">
+    <div class="speichernDialog">
+
+        <button class="schliessen" onclick="popupOffS()"><img src="{% static 'Bilder/closecircle.svg' %}"></button>
+
+        <h3 class="mittigeSchriftUeberschrift">Auswahl</h3>
+
+        <button class="buttonAuswahl" onclick="popupOffS()"> <!-- Abbrech-Popup hier verlinkt -->
+            <div class="buttoninnenprimaer"><img src="{% static 'Bilder/Entwurf.svg' %}"></div>
+            <div class="buttonschriftprimaer" onclick="window.location.pathname = '/SBSInstructionsproject/entwurffertig'">Als Entwurf speichern</div>
+        </button> 
+
+        <button class="buttonAuswahl" onclick=""> <!-- Speichern-Seite hier verlinken -->
+            <div class="buttoninnenprimaer"><img src="{% static 'Bilder/Speichern.svg' %}"></div>
+            <div class="buttonschriftprimaer" onclick="window.location.pathname = '/SBSInstructionsproject/anleitunggespeichert'">Speichern und hochladen</div>
+        </button> 
+
+    </div>
+</div> 
+    
+<!-- Header mit Logo und Buttons -->
+<div class="header">
+    <div class="boxumAErstellen">
+        <input class="aErstellen" type="button"/>
+    </div>
+
+    <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/login'">
+        <input class="profil" type="button"/>
+    </div>       
+</div>
+
+<!-- Divider für Abbrechen-Popup -->
+<div id="overlayAbbrechen">
+    <div class="abbrechenDialog">
+        <h3 class="mittigeSchriftUeberschrift">Abbrechen</h3>
+
+        <p class="mittigeSchrift">Sind Sie sicher, dass Sie den Kreationsprozess abbrechen wollen?</p>
+
+        <div class="jaNein">
+
+            <button class="buttonNein" onclick="popupOffA()"> <!-- Abbrech-Popup hier verlinkt -->
+                <div class="buttoninnensekundaer"><img src="{% static 'Bilder/AbbrechenX.svg' %}"></div>
+                <div class="buttonschriftsekundaer">Nein</div>
+            </button> 
+
+            <button class="buttonJa" onclick="window.location.pathname = '/SBSInstructionsproject'">      
+                <div class="buttoninnenprimaer"><img src="{% static 'Bilder/Ja.svg' %}"></div>
+                <div class="buttonschriftprimaer">Ja</div>
+            </button> 
+
+        </div>
+    </div>
+</div> 
+
+<div class="logocontainer" onclick="popupOnA()">
+    <img class="logo" src="{% static 'Bilder/Logo.svg' %}">
+</div>
+
+<!-- Hintergrund -->
+<div class="hintergrund">
+    <form method="post" enctype="multipart/form-data">
+    <!-- Systemstatuszeile  -->
+    <div class="statuscontainer">
+        <br /><br />
+        <ul class="list-unstyled multi-steps">
+        <li class="is-active">
+            <div style="margin-left: -4px;">Infos</div>
+        </li>
+        <li>
+            <div style="margin-left: -18px;">Schritte</div>
+        </li>
+        <li>
+            <div style="margin-right: -7px;">Fertig</div>
+        </li>
+        </ul>
+    </div>
+    
+    <!-- Eingabeblock -->
+
+    <div class="eingabeundweiter">
+        <div class="eingabeformular">
+            <!-- Ersteller und Datum Eingabe -->
+            <div class="erstellerdatum">
+                <!-- Ersteller eingeben -->
+                <div class="ersteller">
+                    <p class="text">Ersteller:
+                        {{ form.profil }}                        
+                    </p>
+                </div>
+                <!-- Automatisches Datum -->
+                <div class="datum">
+                    <p class="text">Datum:</p>
+                    {{ form.datum }}
+                </div>
+                <!-- Schalter Privat/Oeffentlich -->
+                <div class="privat">
+                    <p class="text">Öffentlich</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <p class="text">Privat</p>
+                    <img class="privaticon" src="{% static 'Bilder/PrivatIcon.svg' %}">
+                </div>
+            </div>
+            <!-- Anleitungsinfos wie Titel, Dauer usw. eingeben -->
+            <div class="titelkategoriedauerthumbnail">               
+                <div class="anleitungsinfos">
+
+                    <!-- Titel -->
+                    <div class="textbox">
+                        <div class="iconposition">
+                            <p>Titel:</p><p hidden class="fehlermeldungtext">Bitte geben Sie den Titel an!</p>
+                        </div>{{ form.anleittitel }}
+                    </div>
+                    <!-- Kategorie -->
+                    <div class="textbox">
+                        <div class="iconposition">
+                            <p>Kategorie:</p><p hidden class="fehlermeldungtext">Bitte geben Sie mindestens eine Kategorie an!</p>
+                        </div>{{ form.kategorie }}
+                    </div>
+                    <!-- Dauer -->
+                    <div class="textbox">
+                        <div class="iconposition">
+                            <p>Dauer: [min]</p>
+                        </div>{{ form.dauer }}
+                    </div>
+                </div>
+                <!-- Thumbnail -->
+                <div class="thumbnail">
+                    <p>Thumbnail:</p>
+                        <button class="platzhalterBild" type="file" name="neuerhintergrund" accept="image/*"  
+                            onclick="loadFile(event)">
+                            {{ form.img }}
+                        </button>
+                </div>      
+            </div>
+        </div>
+
+        <!-- Weiter Block -->
+        <div class="weiter">
+            <input class="eingabenspeichernbutton" type="submit" value="">
+        </div>
+
+    </div>
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    </form>
+    <!-- Abbrechen und Speichern Buttons -->
+    <div class="abbruchspeichern">
+
+        <div class="abbrechen">
+            <button class="buttonabbrechen" onclick="popupOnA()"> <!-- Abbrech-Popup hier verlinkt -->
+            <div class="buttoninnensekundaer"><img src="{% static 'Bilder/AbbrechenX.svg' %}"></div>
+            <div class="buttonschriftsekundaer">Anleitung abbrechen</div>
+            </button> 
+        </div>
+
+        <div class="speichern">
+            <button class="buttonspeichern" onclick="popupOnS()">  <!-- Speichern-Popup hier verlinken -->
+            <div class="buttoninnenprimaer"><img src="{% static 'Bilder/SpeichernX.svg' %}"></div>
+            <div class="buttonschriftprimaer">Anleitung speichern</div>
+            </button> 
+        </div>
+        
+    </div>
+    
+</div>
+</body>
+
+</html>

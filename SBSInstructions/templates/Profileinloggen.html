@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SbS - Login</title>
+    <link rel="stylesheet" type="text/css" href="../../static/css/Profilerstellen.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Link zu .js und static -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Profilerstellen.css' %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header"></div>
+    <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
+        <img src="{% static 'Bilder/Logo.svg' %}" class="logo">
+    </div>
+    
+
+    <!-- Anmeldeblock -->
+    <div class="block">
+        <form method="post" class="card" novalidate>
+            <h1>Anmelden</h1>
+            {% csrf_token %}
+
+            <label for="email">Email/Username:</label>
+            {{ form.email }}
+
+            <label for="password">Password:</label>
+            {{ form.password }}
+            <button type="submit">Log in</button>
+            <h2>Noch kein Profil?</h2>
+            <button type="button" onclick="window.location.pathname = '/SBSInstructionsproject/profilerstellen'">
+                Sign-Up
+            </button>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </form>
+    </div>
+</body>
+
+</html>

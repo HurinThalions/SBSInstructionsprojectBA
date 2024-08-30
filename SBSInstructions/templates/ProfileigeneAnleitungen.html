@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SbS - Startbildschirm</title>
+    
+    <!-- Link zu .js und static -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Startseite.css' %}">
+</head>
+
+<body>
+    <!-- Header mit Logo und Buttons -->
+    <div class="header">
+        <div class="boxumAErstellen" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungerstellen'">
+            <input class="aErstellen" type="button">
+        </div>
+
+        <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/login'">
+            <input class="profil" type="button">
+        </div>
+    </div>
+
+    <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
+        <!-- <img class="logo" src="../../static/Bilder/Logo.svg"> -->
+        <img src="{% static 'Bilder/Logo.svg' %}" class="logo">
+    </div>
+
+    <div class="hintergrund">
+            <div class="searchbar">
+                <form action="filler">
+                    <input class="Suchleiste" type="text" placeholder="Suche">
+                </form>
+            </div>
+
+            <div class="kataloguberschrift">
+                <h2>Meine Anleitungen</h2>
+            </div>
+            <div class="katalog" id="katalog">
+                <div id="anleitung-details">
+                  <ul class="anleitungsBlockList">
+
+                    {% for einzelneanleitung in anleitungen %}
+                    <li class="anleitungsBlock" onclick="window.location.pathname='SBSInstructionsproject/anleitungdurchgehen/{{ einzelneanleitung.id }}'">
+                      <div class="anleitungsBlockImg">
+                        <img src="/media/{{ einzelneanleitung.img }}">
+                      </div>
+                      <div class="anleitungsBlockText">
+                        <h3>Titel: <span>{{ einzelneanleitung.anleittitel }}</span></h3>
+                        <h3>Profil: <span>{{ einzelneanleitung.profil }}</span></h3>
+                        <h3>Kategorie: <span>{{ einzelneanleitung.kategorie }}</span></h3>
+                        <h3>Dauer: <span>{{ einzelneanleitung.dauer }} </span></h3>
+                      </div>
+                    </li>
+                    {% endfor %}
+
+                  </ul>
+                </div>
+            </div>
+            
+    </div>
+</body>
+</html>

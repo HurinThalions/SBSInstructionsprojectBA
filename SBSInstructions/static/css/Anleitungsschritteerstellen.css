@@ -1,0 +1,663 @@
+/* --------------------------------Header--------------------------- */
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 110px;
+}
+
+.boxumProfil:hover, .boxumAErstellen:hover {
+    cursor: pointer;
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.boxumAErstellen {
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+}
+
+.profil {
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Asap', sans-serif;
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+    height: 100%;
+}
+
+.hintergrund{
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    min-height: 100%;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 110px;
+}
+
+.boxumAErstellen {
+    background-image: linear-gradient(#d6e1e875, #1d415967);
+}
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+
+    cursor: pointer;
+}
+
+.profil:hover, .aErstellen:hover {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.profil {
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen:hover{
+    cursor: pointer;
+}
+
+.profil:hover{
+    cursor: pointer;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+}
+
+.logocontainer :hover{
+    cursor: pointer;
+}
+/* ---------------------------Step Progress Bar-------------------------- */
+
+/* Breite der Statusbar */
+.statuscontainer {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    }
+    
+    .statuscontainer:hover {
+        cursor: default;
+    }
+    
+    .multi-steps {
+        margin: 0;
+        display: flex;
+        padding: 0;
+    }
+    
+    /* Stepbar Verhalten */
+    .multi-steps > li {
+        flex: 1;
+        position: relative;
+        text-align: center;
+        display: flex;
+        counter-increment: stepNum;
+        flex-direction: column;
+        align-items: flex-start;
+        color: #A65756;
+    }
+    
+    /* Design Layout Stepbar (Kreise usw) */
+    .multi-steps > li:before {
+        content: "";
+        width: 36px;
+        height: 36px;
+        line-height: 32px;
+        display: block;
+        background-color: #A65756;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #A65756;
+        border-radius: 50%;
+    }
+    
+    /* Linie zwischen den Steps */
+    .multi-steps > li:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #A65756;
+        top: 19px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+    
+    /*  Ende der Stepbar definiert */
+    .multi-steps > li:last-child {
+    
+        flex-grow: 0;
+        align-items: flex-end;
+        white-space: nowrap;
+    }
+    
+    /* Aussehen naechste Schritte */
+    .multi-steps > li.is-active ~ li:before {
+        background-color: white;
+        border-color: #A65756;
+    }
+
+    /* -------------Eingabe und Weiter------------ */
+  
+.eingabeundweiter {
+    display: table;
+    width: 90%;
+    height: fit-content;
+    margin-left: 10%;
+    margin-top: 30px;
+    justify-content: baseline;
+    align-items: center;
+    }
+
+.weiter {
+    display: table-cell;
+    border-left: 2px dotted #000;
+    border-top: 2px dotted #000;
+    border-bottom: 2px dotted #000;
+    background: none;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    /* margin-right: 10%; */
+}
+
+.weiter:hover {
+    background-color: #c4c4c469;
+    cursor: pointer;
+}
+
+.weitericon {
+    background: none;
+    border: none;
+}
+
+.weitericon:hover {
+    cursor: pointer;
+}
+
+
+.SchritteHaupt {
+    display: flex;
+    align-items: stretch;
+    margin-right: 2%;
+    padding-bottom: 2%;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: white;
+    height: auto;
+}
+    
+.BeschreibungKompBild {
+    display: flex;
+    align-items: stretch;
+    margin-top: 4%;
+    margin-bottom: 1%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    
+}
+
+.BeschreibungKomp {
+    margin-top: 0.5%;
+    margin-left: 5%;
+    margin-right: 10%;
+    padding: 50px;
+}
+
+ /*Bildcolum*/
+ .Bild{
+    border: 1px solid black;
+    z-index: 0;
+    text-align: center;
+    width: 40%; height: auto; margin-top: 7.5%; margin-left: auto ; border-radius: 10px; margin-right: 5vw;
+}
+
+
+#schritte {
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    margin-top:1%; margin-left: 4%; position: absolute; background-color:white; border: none; font-size: 24px;
+}
+
+
+
+.menue {
+   margin-top:2%; margin-left:70%; margin-right: 5vw; position: absolute; background-color: none; border: none; font-size: 24px;
+}
+
+.trash {
+    margin-top:2%;  margin-left: 73%; position: absolute; border: none; font-size: 24px;
+}
+
+
+    .Beschreibung {
+    width: auto; height: auto; margin-top: 5%; margin-left:1%; border-radius: 10px;
+    }
+
+    .Komponenten {
+        width: 35vw; height: auto; border: 1px solid gray; margin-top: 5%; margin-left: 1%; border-radius: 10px; 
+        }
+
+    .area1{
+        display: flex;
+        justify-content: space-around;
+        place-items: center;
+        width: auto;
+        height: 10vh;
+        margin-top: auto;
+        margin-left: 3%;
+        border-bottom: 1px solid black;
+    }
+    .area2{
+        display: flex;
+        justify-content: space-around;
+        place-items: center;
+        width: auto;
+        height: 10vh;
+        /* margin-top: 7%; */
+        margin-left: 3%;
+        margin-bottom: 2%;
+    }
+
+    .textinKomp{
+        width:200px;
+        height:200px;
+        margin-top: -40%;
+        margin-left: 45%;
+    }
+
+    /*Textfeld*/
+    .tfeld {
+    border-radius: 10px; border-color: white;
+    }
+  
+    /*Buttons*/ 
+    .bildupload{
+        background-color: white; border: none; 
+    }
+
+    .komp1{
+       background-color: white;
+       border: 1 px solid gray;
+       padding: 20px;
+    }
+
+    .komp2{
+        background-color: white;
+        border: 1 px solid gray;
+        padding: 20px; 
+    }
+
+    .menue:hover, .trash:hover, .bildupload:hover, .komp1:hover, .komp2:hover{
+        background-color: none;
+        cursor: pointer;
+    }
+
+    /* #kompbeschreibungFormInput {
+        margin-right: auto;
+    } */
+    
+    /*Schrift*/
+    
+    .abbruchspeichern {
+        margin-top: 2vh;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 25%;
+        display: flex;
+        width: 50%;
+        padding-bottom: 35px;
+    }
+    
+   /* Design der Buttons */
+.buttonabbrechen {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: auto;
+    background-color: #fff;
+    border-color: #4680A7;
+    border-radius: 20px;
+}
+    
+    .buttonabbrechen:hover {
+        background-color: #D5DFE5;
+        cursor: pointer;
+    }
+    
+    .buttonspeichern {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: auto;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 20px;
+        border-color: #4680a700;
+    }
+    
+    .buttonspeichern:hover {
+        background-color:#366585;
+        cursor: pointer;
+    }
+    
+    .eingabenspeichernbutton{
+        background-image: url('../../static/Bilder/weiter.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-color: #4680A7;
+        border-radius: 20px;       
+    }
+
+    .eingabenspeichernbutton:hover{
+        cursor: pointer;
+    }
+
+    .buttoninnensekundaer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    
+    .buttonschriftsekundaer {
+        font-size: 18px;
+        color: #4680A7;
+    }
+    
+    .buttoninnenprimaer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    
+    .buttonschriftprimaer {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    #overlayAbbrechen {
+        position: fixed;
+        display: none;
+        width: 100%; 
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(2px);
+        z-index: 2; 
+        cursor: default;
+      }
+    
+    .abbrechenDialog {
+        position: absolute;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+        z-index: 2;
+    }
+    
+    .mittigeSchriftUeberschrift {
+        text-align: center;
+        color:#4680A7 ;
+        font-size: 24px;
+    }
+    
+    .mittigeSchrift {
+        text-align: center;
+    }
+    
+    .jaNein {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-top: 30px;
+    }
+    
+    .buttonNein {
+        display:flex;
+        justify-content: left;
+        padding-left: 3%;
+        align-items: center;
+        width: 100px;
+        height: 35px;
+        background-color: #fff;
+        border-color: #4680A7;
+        border-radius: 20px;
+    }
+    .buttonNein:hover {
+        background-color: #D5DFE5;
+        cursor: pointer;
+    }
+    
+    .buttonJa {
+        display:flex;
+        justify-content: left;
+        padding-left: 5%;
+        align-items: center;
+        width: 100px;
+        height: 35px;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 20px;
+        border-color: #4680a700;
+    }
+    
+    .buttonJa:hover {
+        background-color:#366585;
+        cursor: pointer;
+    }
+      
+    /* ------------------------------Speichern Popup------------------------- */
+    
+    #overlaySpeichern {
+        position: fixed;
+        display: none;
+        width: 100%; 
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backdrop-filter: blur(2px);
+        z-index: 2; 
+        cursor: default;
+      }
+    
+    .schliessen {
+        position: fixed;
+        top: 7px;
+        right: 7px;
+        border: none;
+        background: none;
+    }
+    
+    .schliessen:hover {
+        cursor: pointer;
+    }
+    
+    .speichernDialog {
+        position: absolute;
+        align-items: center;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding-top: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 5%;
+    }
+    
+    .mittigeSchriftUeberschrift {
+        text-align: center;
+        color:#4680A7 ;
+        font-size: 24px;
+    }
+    
+    .auswahl {
+        justify-content: center;
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-top: 30px;
+    }
+    
+    .buttonAuswahl {
+        display:flex;
+        justify-content: left;
+        margin: 20px;
+        align-items: center;
+        width: 280px;
+        height: 35px;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 20px;
+        border-color: #4680a700;
+    }
+    
+    .buttonAuswahl:hover {
+        background-color:#366585;
+        cursor: pointer;
+    }
+
+    .Komponenten{
+        border-bottom: solid black 1px;
+    }
+
+    .weitereKomponente{
+        position: relative;
+        margin-top: 2%;
+        border-radius: 10px;
+        padding: 20px;
+    }

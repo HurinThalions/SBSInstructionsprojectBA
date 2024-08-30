@@ -1,0 +1,260 @@
+body { 
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: #F3F5F6;
+    margin: 0;
+}
+/* --------------------------------Header--------------------------- */
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.boxumProfil, .boxumAErstellen {
+    /* Positionierung der Box */
+    position: relative;
+    /* Einbetten der Box in den Header */
+    height: inherit;
+    min-width: 110px;
+}
+
+
+
+.profil, .aErstellen{
+    /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* Groeße des Buttons */
+    height: 50%;
+    width: 50%;
+    max-height: 40px;
+    max-width: 40px;
+
+    /* Runder Button */
+    border-radius: 50%;
+    border: 0px;
+}
+
+.profil:hover, .aErstellen:hover {
+    cursor: pointer;
+}
+
+.profil {
+    background-image: url("../../static/Bilder/Profil_Logo.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.aErstellen {
+    background-image: url("../../static/Bilder/Anleitunghinzufuegen.svg");
+    background-size: cover;
+    background-color: white;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+    cursor: pointer;
+}
+/* ---------------------------Bodybody-------------------------- */
+
+.body {
+    background-image:url(../static/SVG_Hintergrund3.svg);
+    margin: 0;
+    background-position-y: 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: static;
+    width: 100%;
+    height: 100%;
+}
+
+/* "Anleitung hochgeladen und gespeichert */
+
+.infoText{
+    padding-top: 110px;
+    margin:0;
+    font-size: 44px;
+    display: flex; 
+    justify-content: center;
+}
+/* Grüner Haken */
+
+.grünerHaken{
+    display: flex; 
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* Design der Buttons */
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 95px; 
+    padding-bottom: 122px;
+}
+.buttonStartseite{
+  
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    background-color: #fff;
+    border-color: #4680A7;
+    border-radius: 22.5px;
+    font-size: 18px;
+    color: #4680A7;
+    margin-left: 30%;
+
+}
+
+.buttonStartseite:hover{
+    background-color: #D5DFE5;
+    cursor: pointer;
+}
+.buttonAnleitungen{
+    
+    font-size: 18px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    color: #fff;
+    background-color:#4680A7;
+    border-radius: 22.5px;
+    border-color: #4680a700;
+    margin-right: 30%;
+
+}
+
+.buttonAnleitungen:hover{
+    background-color:#366585;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .header {
+        display: flex;
+        justify-content: right;
+        height: 80px;
+        background-color: #BCBCBC;
+        background-image: linear-gradient(#FFFFFF, #A8A8A8);
+        box-shadow: 0px 2px 5px #c3c3c3;
+    }
+    
+    .boxumProfil, .boxumAErstellen {
+        /* Positionierung der Box */
+        position: relative;
+    
+        /* Einbetten der Box in den Header */
+        height: inherit;
+        min-width: 80px;
+    }
+    
+    .boxumProfil:hover, .boxumAErstellen:hover {
+        cursor: pointer;
+        background-image: linear-gradient(#d6e1e875, #1d415967);
+    }
+    
+    
+    .profil, .aErstellen{
+        /* Positionierung der Buttons in der Mitte der Box 'boxumProfil' */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    
+        /* Groeße des Buttons */
+        height: 50%;
+        width: 50%;
+        max-height: 40px;
+        max-width: 40px;
+    
+        /* Runder Button */
+        border-radius: 50%;
+        border: 0px;
+    }
+
+    
+    .logocontainer {
+        display: flex;
+        justify-content: left;
+        height: 60px;
+        position: absolute;
+        top: 10px;
+    }
+
+    .grünerHaken{
+        display: flex; 
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .infoText{
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        font-size: 100%;
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 95px; 
+        padding-bottom: 100px;
+    }
+    
+    .buttonStartseite{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 40px;
+        background-color: #fff;
+        border-color: #4680A7;
+        border-radius: 22.5px;
+        font-size: 18px;
+        color: #4680A7;
+        margin: auto;
+    
+    }
+    
+    .buttonStartseite:hover{
+        background-color: #D5DFE5;
+        cursor: pointer;
+    }
+    .buttonAnleitungen{
+        
+        font-size: 18px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 40px;
+        color: #fff;
+        background-color:#4680A7;
+        border-radius: 22.5px;
+        border-color: #4680a700;
+        margin: auto;
+    
+    }
+}

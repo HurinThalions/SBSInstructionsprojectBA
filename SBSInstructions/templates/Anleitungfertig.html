@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!----------------------------------------------------HEAD----------------------------------------------------->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SbS Instructions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    
+    <!-- Link zu .js und static -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Anleitungfertig.css' %}">
+</head>
+
+
+<!----------------------------------------------------BODY----------------------------------------------------->
+
+<body>
+    
+    <!-- Header mit Logo und Buttons -->
+    <div class="header">
+        <div class="boxumAErstellen" onclick="window.location.pathname = '/SBSInstructionsproject/anleitungerstellen'">
+            <input class="aErstellen" type="button">
+        </div>
+
+        <div class="boxumProfil" onclick="window.location.pathname = '/SBSInstructionsproject/login'">
+            <input class="profil" type="button">
+        </div>       
+    </div>
+
+    <div class="logocontainer">
+       <img class="logo" src="{% static 'Bilder/Logo.svg' %}" type="button" onclick="window.location.pathname = '/SBSInstructionsproject'">
+        
+    </div>
+
+
+    <!-- Der Bodybody -->    
+
+<div class="body">
+    <div>
+        <h1 class = infoText> Anleitung beendet!  </h1>
+    </div>
+        <!-- Grüner Haken  -->
+    <div class="grünerHaken">
+        <img class="grünerHaken" src="{% static 'Bilder/GruenerHaken.svg' %}">
+
+    </div>
+    <!-- Button Startseite + Anleitungen  -->
+    <div class=" buttons">
+        <button class="buttonStartseite" onclick="window.location.pathname = '/SBSInstructionsproject'">Zur Startseite</button>
+    <button class="buttonAnleitungen" onclick="window.location.pathname = '/SBSInstructionsproject/profileigeneanleitungen/1'">Meine Anleitungen</button>
+    </div>
+</div>
+</body>
+</html>

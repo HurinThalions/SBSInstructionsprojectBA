@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link zu .js und static -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Profilerstellen.css' %}">
+    
+    <title>SbS - Sign Up</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header"></div>
+    <div class="logocontainer" onclick="window.location.pathname = '/SBSInstructionsproject'">
+        <img src="{% static 'Bilder/Logo.svg' %}" class="logo">
+    </div>
+
+    <!-- Sign-Up Block -->
+    <div class="block">
+        <form method="post" class="card" novalidate>
+            <h1>Erstelle dein Profil in SBS-Instructions</h1>
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            {{ form.benutzername }}
+
+            <label for="email">Email:</label>
+            {{ form.email }}
+
+            <label for="password">Password:</label>
+            {{ form.password }}
+            <button type="submit">Sign Up</button>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </form>
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../static/Bilder/SVG_Hintergrund1.svg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    height: 120px;
+    background-color: #BCBCBC;
+    background-image: linear-gradient(#FFFFFF, #A8A8A8);
+    box-shadow: 0px 2px 5px #c3c3c3;
+}
+
+.logocontainer {
+    display: flex;
+    justify-content: left;
+    height: 120px;
+    position: absolute;
+    top: 0.25%;
+    left: 3%;
+}
+
+.logocontainer:hover{
+    cursor: pointer;
+}
+
+/* Anmeldungsblock */
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    margin:  auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 1vw;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button{
+    width: 17vw;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 4%;
+    width: 10vw;
+}
+
+button:hover {
+    background-color: #4680a797;
+    cursor: pointer;
+}
