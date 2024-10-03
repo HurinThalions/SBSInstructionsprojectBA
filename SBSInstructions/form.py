@@ -1,7 +1,7 @@
 from datetime import timedelta
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
-from betterforms.multiform import MultiModelForm
+#from betterforms.multiform import MultiModelForm
 
 from .models import Profil, Anleitung, Anleitungsschritt, Komponente
 
@@ -76,9 +76,9 @@ class KomponenteForm(forms.ModelForm):
 
 # Formular um Anleitungsschritte und Komponenten in einem Schritt zu erfassen
 # Gleichzeitige Abspeicherung noch nicht möglich
-class SchrittundKomponentenMultiForm(MultiModelForm):
-    form_classes = {
-        'Anleitungsschritt': AnleitungsschrittForm,
-        'Komponente': KomponenteForm,
-    }
+# class SchrittundKomponentenMultiForm(MultiModelForm):
+#     form_classes = {
+#         'Anleitungsschritt': AnleitungsschrittForm,
+#         'Komponente': KomponenteForm,
+#     }
 

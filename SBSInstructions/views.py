@@ -6,7 +6,7 @@ from django.views.generic import DetailView, CreateView, ListView
 from django.contrib.auth.views import LoginView, FormView
 from django.contrib.auth import login
 
-from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, AnleitungsschrittForm, KomponenteForm, SchrittundKomponentenMultiForm
+from SBSInstructions.form import SignupForm, EmailAuthenticationForm, AnleitungForm, AnleitungsschrittForm, KomponenteForm  #, SchrittundKomponentenMultiForm
 from SBSInstructions.models import Profil, Anleitung, Anleitungsschritt, Komponente
 
 
